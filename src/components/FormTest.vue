@@ -52,7 +52,7 @@
                     {
                         name: 'date',
                         type: 'date',
-                        label: 'Enter your birthday'
+                        label: 'Enter your birthday',
                     },
                     {
                         name: 'anotherDate',
@@ -66,13 +66,14 @@
                         options: [
                             {label: 'User', value: 'ROLE_USER'},
                             {label: 'Admin', value: 'ROLE_ADMIN'},
-                            {label: 'Super Admin', value: 'ROLE_SUPER_ADMIN'}
+                            {label: 'Super Admin', value: 'ROLE_SUPER_ADMIN'},
                         ]
                     }
                 ],
                 values: {
                     haveValue: "Some value here",
-                    roles: ['ROLE_USER']
+                    roles: ['ROLE_USER'],
+                    anotherDate: '1980-07-21'
                 }
             }
         }

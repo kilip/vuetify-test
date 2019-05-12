@@ -20,6 +20,14 @@
                 ></v-text-field>
 
                 <!-- @todo formatting date -->
+                <c-datepicker
+                    v-if="field.type === 'date'"
+                    :name="field.name"
+                    :label="field.label"
+                    :format="field.format"
+                    :data="item"
+                ></c-datepicker>
+                <!--
                 <v-menu
                     :v-model="field.name"
                     :close-on-content-click="true"
@@ -44,7 +52,7 @@
                     <v-date-picker v-model="item[field.name]" @input="handleDateSave(field, $event)" no-title scrollable autosave>
                     </v-date-picker>
                 </v-menu>
-
+                -->
                 <v-radio-group
                     v-model="field.name"
                     v-if="field.type === 'radio'"
@@ -110,16 +118,16 @@
                 return Object.keys(this.violations).length > 0 && this.violations[key]
             },
             getItem(item, name){
-                const ret = item && item[name];
+                const ret = item ? item[name]: () => {};
                 return ret;
             },
-            formatDate (date) {
+            toISO (date) {
                 if (!date) return null
 
                 const [year, month, day] = date.split('-')
                 return `${month}/${day}/${year}`
             },
-            parseDate (date) {
+            toDisplay (date) {
                 if (!date) return null
 
                 const [month, day, year] = date.split('/')
