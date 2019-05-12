@@ -7,8 +7,13 @@ Vue.use(Router);
 
 const routes = [
     {
-        name: 'Home',
+        name: 'Main',
         path: '/',
+        redirect: '/dashboard'
+    },
+    {
+        name: 'Homepage',
+        path: '/dashboard',
         component: HelloWorld,
         meta: {
             icon: "dashboard",
@@ -28,6 +33,7 @@ const routes = [
         name: 'Table',
         path: '/tables',
         component: Table,
+        icon: 'assignment',
         meta: {
             label: 'Table Layout'
         }

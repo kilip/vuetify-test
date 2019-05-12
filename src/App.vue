@@ -1,6 +1,8 @@
 <template>
     <v-app id="inspire">
-        <c-navbar></c-navbar>
+        <c-navbar
+            :config="config"
+        ></c-navbar>
 
         <v-content>
             <v-container fluid fill-height>
@@ -19,10 +21,13 @@
 </template>
 
 <script>
+    import nav from './config/nav';
+
     export default {
         data(){
             return {
-                drawer: true
+                drawer: true,
+                config: nav
             }
         }
     }
